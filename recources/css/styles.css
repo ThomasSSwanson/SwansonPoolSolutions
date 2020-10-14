@@ -1,0 +1,682 @@
+/* BASIC SETUP */
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+.clearfix {
+    zoom: 1
+}
+
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+
+/* --------------------------------------------------- */
+/* REUSABLE COMPONENTS */
+/* --------------------------------------------------- */
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+
+}
+
+section {
+    padding: 100px 0;
+}
+
+.box {
+    padding: 1%;
+}
+
+.box p {
+    
+    line-height: 145%;
+}
+
+.long-copy {
+    line-height: 145%;
+    width: 70%;
+    margin-left: 15%;
+    word-spacing: 4px;
+    text-align: center;
+    margin-bottom: 40px;
+    
+}
+
+/* HEADINGS */
+
+h1,
+h2,
+h3 {
+
+
+    font-weight: 400;
+    text-transform: uppercase;
+    
+
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 260%;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    
+}
+
+
+h2 {
+    font-size: 160%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 110%;
+    margin-bottom: 15px;
+}
+
+h2:after {
+    display: block;
+    height: 2px;
+    background-color: #0038B8;
+    content: " ";
+    margin: 0 auto;
+    width: 100px;
+    margin-top: 30px;
+}
+
+
+
+
+/* ----- BUTTONS ----- */
+
+.btn:link,
+.btn:visited,
+input[type=submit] {
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    -webkit-transition: background-color 0.6s, border 0.6s, color 0.6s, box-shadow 0.6s;
+    transition: background-color 0.6s, border 0.6s, color 0.6s, box-shadow 0.6s;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+.btn-full:link,
+.btn-full:visited {
+    background-color: #fff;
+    border: 2px solid #fff;
+    color: #0038B8;
+    margin-right: 15px;
+    font-weight: 400;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+    border: 2px solid #fff;
+    color: #fff;
+    font-weight: 400;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: #0038B8;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
+    
+}
+
+.btn-full:hover,
+.btn-full:active {
+
+    border: 2px solid #fff;
+    color: #fff;
+
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.logo {
+    height: 160px;
+    width: auto;
+    float: left;
+    margin-top: 20px;
+    
+}
+
+.logo-blue {
+    height: 50px;
+    width: auto;
+    float: left;
+    margin-top: 5px;
+    display: none;
+    margin: 5px 0;
+}
+
+
+/* --------------------------------------------------- */
+/* HEADER */
+/* --------------------------------------------------- */
+
+header {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(img/swimming-pool-504780.jpg);
+
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.hero-text-box {
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    
+}
+
+/* MAIN NAV */
+
+.main-nav {
+    float: right;
+    list-style: none;
+    margin-top: 85px;
+    font-weight: 400;
+}
+
+.main-nav li {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 8px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 95%;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #fff;
+}
+
+/* STICKY NAV */
+
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(255, 255, 255, 0.98);
+    box-shadow: 0 2px 2px #efefef;
+    z-index: 9999;
+}
+
+.sticky .main-nav { 
+    margin-top: 18px; 
+}
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+    padding: 8px 0;
+    color: #555;  
+    font-size: 85%;  
+}
+
+.sticky .main-nav li a:hover,
+.sticky .main-nav li a:active {
+    border-bottom: 2px solid #0038B8;
+}
+
+.sticky .logo {
+    display: none;
+}
+
+.sticky .logo-blue {
+    display: block;
+}
+
+/* MOBILE NAV */
+
+
+.mobile-nav-icon {
+    float: right;
+    margin-top: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.mobile-nav-icon i {
+    font-size: 200%;
+    color: #fff;
+}
+
+/* ABOUT US SECTION */
+
+.section-about {
+    background-color: rgb(224, 224, 224);
+    padding-bottom: 0;
+    background-image: url(/recources/css/img/white-waves.png);
+}
+
+
+
+.about-images {
+    padding: 0;
+    width: 100%;
+    margin-top: 75px;
+    
+}
+
+.about-images li {
+    display: block;
+    float: left;
+    width: 25%;
+}
+
+.about-photo {
+    
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+    
+}
+
+.about-photo img {
+    opacity: 0.7;
+    width: 100%;
+    height: 350px;
+    
+    transform: scale(1.15);
+    
+    transition: opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.about-photo img:hover {
+    opacity: 1;
+    
+    transform: scale(1.03);
+}
+
+
+/* MAINTENANCE SECTION */
+
+.section-maintenance {
+    background-image: url(/recources/css/img/white-waves.png);
+    
+}
+
+.maintenance-list {
+    list-style: none;
+    
+    
+}
+
+.maintenance-list li { 
+    margin-top: 23px;
+    width: 100%;
+    border-bottom: 1px dotted #333;
+    
+}
+
+
+.steps {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 140%;
+    color: #333;
+}
+
+.small-icon {
+    font-family: 'Abril Fatface', cursive;
+    margin-right: 20px;
+    color: #0038B8;
+    font-size: 220%;
+    line-height: 120%;
+    vertical-align: middle;
+    
+}
+
+.sm-lineup {
+    margin-left: 7px;
+}
+
+.sm-lineup-2 {
+    margin-left: 8px ;
+
+}
+
+.maintenance-image {
+    position: relative;
+    display: block;
+    float: left;
+    margin-top: 30px;
+    
+    
+    
+    width: auto;
+    height: auto;
+    
+}
+
+.maintenance-image img {
+    max-height: 480px;
+    max-width: 640px;
+    border: 5px double #0038B8;
+    
+}
+
+.maintenance-column-box {
+    margin-top: 20px;
+}
+
+
+
+.maintenance-col {
+    width: 40%;
+}
+
+.box {
+    padding: 1%;
+}
+
+.icon-big {
+    font-size: 350%;
+    display: block;
+    color: #0038B8;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+
+/* REPAIRS SECTION */
+
+
+
+.section-repairs {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url(/recources/img/wave-background-final.png), url(/recources/css/img/white-waves.png);
+    color: #fff;
+    
+}
+
+.section-repairs h2::after {
+    background-color: #fff;
+}
+
+.repairs-box {
+    padding-top: 150px;
+}
+
+.repairs-list {
+    list-style: none;
+    
+    font-size: 150%;
+    font-family: 'Abril Fatface', cursive;
+    text-align: center;
+}
+
+.repairs-col {
+    width: 40%;
+    float: right;
+    margin-left: 0;
+}
+
+.repairs-list li {
+    margin-top: 25px;
+    width: 100%;
+    height: 47px;
+
+}
+
+.repairs-list li:first-child {
+    border-top: none;
+}
+
+.repairs-image {
+    display: block;
+    float: leftright;
+    margin-top: 30px;
+    padding: 5px;
+    /* border: 5px double #fff; */
+    width: 60%;
+    
+}
+
+.repairs-image img {
+    width: auto;
+    height: auto;
+    max-height: 480px;
+    max-width: 640px;
+    float: right;
+    border-radius: 8px;
+    border: 2px solid #0038B8;
+}
+
+.white-box {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    color: #0038B8;
+    height: 550px;
+}
+
+/* TESTIMONIAL SECTION */
+
+.section-testimonials {
+    
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(img/humphrey-muleba-dyj7RTs85Fs-unsplash.jpg);
+    background-size: cover;
+    color: #333;
+    background-attachment: fixed;
+
+}
+
+blockquote {
+    padding: 2%;
+    font-style: italic;
+    line-height: 145%;
+    position: relative;
+    margin-top: 40px;
+    
+}
+
+blockquote:before {
+    content: "\201c";
+    font-size: 500%;
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    
+}
+
+cite {
+    font-size: 90%;
+    margin-top: 25px;
+    display: block;
+
+}
+
+
+/* SIGNUP SECTION */
+
+.section-signup {
+    background-image: url(/recources/css/img/white-waves.png);
+}
+
+.contact-form {
+    width: 100%;
+    margin: 0 auto;
+}
+
+input[type=text],
+input[type=email],
+select,
+textarea {
+    width: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+input[type=submit] {
+    background-color: #0038B8;
+    
+    color: #fff;
+    
+    font-weight: 400;
+    border: 2px solid #fff;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+input[type=submit]:hover,
+input[type=submit]:active {
+    background-color: #fff;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.4);
+    color: #0038B8;
+    border: 2px solid #0038B8;
+}
+
+textarea {
+    height: 100px;
+}
+
+input[type=checkbox] {
+    margin: 10px 5px 10px 0;
+}
+
+*:focus {
+    outline: none;
+}
+
+.contact-list {
+    list-style: none;
+}
+
+.contact-block {
+    margin-bottom: 25px;
+}
+
+.socials-box {
+    margin-top: 12px;
+}
+
+.contact-icon {
+    font-size: 170%;
+    margin-right: 15px;
+    position: relative;
+    line-height: 120%;
+    vertical-align: middle;
+    bottom: 3px;
+    color: #0038B8;
+}
+
+.form-messages {
+    width: 70%;
+    padding: 10px;
+    margin-left: 200px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 15px;
+    background-color: #272727;
+    font-size: 80%;
+}
+
+.footer-nav {
+    list-style: none;
+    float: left;
+}
+
+.companies {
+    list-style: none;
+    float: right;
+}
+
+.footer-nav li,
+.companies li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited {
+    text-decoration: none;
+    border: 0;
+    color: #888;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active {
+    color: #ddd;
+}
+
+.companies li img {
+    max-height: 700px;
+    max-width: 70px;
+}
+
+footer p {
+    color: #888;
+    text-align: center;
+
+    
+}
+
+.section-repairs {
+    position: relative;    
+}
